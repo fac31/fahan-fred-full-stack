@@ -22,7 +22,9 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes
 app.get('/data', async (req, res) => {
     try {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=gb&category=business&apiKey=${process.env.NEWS_API_KEY}`);
+    const oneWeekAgo = getDateOneWeekAgo();
+    console.log(oneWeekAgo)
+    const response = await fetch(`https://newsapi.org/v2/everything?q=finance&from=${oneWeekAgo}&pageSize=8&apiKey=${process.env.NEWS_API_KEY}`);
         const data = await response.json();
         console.log(data);
         res.json(data);
@@ -36,3 +38,14 @@ app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
 
+// Functions
+function getDateOneWeekAgo() {
+    const weekAgo = new Date();
+    weekAgo.setDate(weekAgo.getDate() - 7);
+
+    const year = weekAgo.getFullYear();
+    const month = String(weekAgo.getMonth() + 1).padStart(2, '0');
+    const date = String(weekAgo.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${date}`;
+}
