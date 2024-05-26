@@ -1,11 +1,9 @@
 // Import necessary modules
 import express from 'express';
-import { defaultMiddleware } from '@nlbridge/express';
-import { createAiChat } from '@nlux/core';
-import { createChatAdapter } from '@nlux/nlbridge';
 import fetch from 'node-fetch';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { defaultMiddleware } from '@nlbridge/express';
 
 dotenv.config();
 
@@ -28,13 +26,6 @@ app.post('/chat-api',
         chatModel: 'gpt-3.5-turbo',
     })
 );
-
-// Create and configure the chat adapter
-const nlbridgeAdapter = createChatAdapter()
-    .withUrl('http://localhost:8080/chat-api');
-
-
-
 
 // Start the server
 app.listen(port, () => {
