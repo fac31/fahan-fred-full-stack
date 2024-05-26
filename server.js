@@ -21,6 +21,7 @@ app.use(express.json());
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
 
+// Chat API endpoint using default middleware
 app.post('/chat-api',
     defaultMiddleware('openai', {
         apiKey: process.env.OPENAI_API_KEY,
@@ -28,8 +29,14 @@ app.post('/chat-api',
     })
 );
 
+// Create and configure the chat adapter
+const nlbridgeAdapter = createChatAdapter()
+    .withUrl('http://localhost:8080/chat-api');
 
 
+
+
+// Start the server
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
