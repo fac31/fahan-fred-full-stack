@@ -23,8 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get('/data', async (req, res) => {
     try {
     const oneWeekAgo = getDateOneWeekAgo();
-    console.log(oneWeekAgo)
-    const response = await fetch(`https://newsapi.org/v2/everything?q=finance&from=${oneWeekAgo}&pageSize=8&apiKey=${process.env.NEWS_API_KEY}`);
+    const response = await fetch(`https://newsapi.org/v2/everything?q=finance&excludeDomains=yahoo.com&language=en&from=${oneWeekAgo}&pageSize=10&sortBy=relevancy&apiKey=${process.env.NEWS_API_KEY}`);
         const data = await response.json();
         console.log(data);
         res.json(data);
