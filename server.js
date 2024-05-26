@@ -1,6 +1,8 @@
 // Import necessary modules
 import express from 'express';
 import { defaultMiddleware } from '@nlbridge/express';
+import { createAiChat } from '@nlux/core';
+import { createChatAdapter } from '@nlux/nlbridge';
 import fetch from 'node-fetch';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -25,6 +27,8 @@ app.post('/chat-api',
         chatModel: 'gpt-3.5-turbo',
     })
 );
+
+
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
