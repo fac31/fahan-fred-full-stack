@@ -23,7 +23,7 @@ fetch("/data")
         const image = document.createElement("img");
         image.src = news.urlToImage;
     
-        const title = document.createElement("h1");
+        const title = document.createElement("h2");
         title.textContent = news.title;
     
         const description = document.createElement("p");
