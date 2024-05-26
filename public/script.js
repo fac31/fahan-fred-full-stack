@@ -1,3 +1,6 @@
+// Import the CSS from the @nlux/themes package
+import '@nlux/themes/nova.css';
+
 import { createAiChat } from '@nlux/core';
 import { createChatAdapter } from '@nlux/nlbridge';
 
