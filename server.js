@@ -22,8 +22,8 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes
 app.get('/data', async (req, res) => {
     try {
-    const oneWeekAgo = getDateOneWeekAgo();
-    const response = await fetch(`https://newsapi.org/v2/everything?q=finance&excludeDomains=yahoo.com&language=en&from=${oneWeekAgo}&pageSize=10&sortBy=relevancy&apiKey=${process.env.NEWS_API_KEY}`);
+    const dateThreeDaysAgo = getDateThreeDaysAgo();
+    const response = await fetch(`https://newsapi.org/v2/everything?q=finance&excludeDomains=yahoo.com&language=en&from=${dateThreeDaysAgo}&pageSize=10&sortBy=relevancy&apiKey=${process.env.NEWS_API_KEY}`);
         const data = await response.json();
         console.log(data);
         res.json(data);
@@ -38,13 +38,13 @@ app.listen(port, () => {
 });
 
 // Functions
-function getDateOneWeekAgo() {
-    const weekAgo = new Date();
-    weekAgo.setDate(weekAgo.getDate() - 7);
+function getDateThreeDaysAgo() {
+    const threeDaysAgo = new Date();
+    threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
 
-    const year = weekAgo.getFullYear();
-    const month = String(weekAgo.getMonth() + 1).padStart(2, '0');
-    const date = String(weekAgo.getDate()).padStart(2, '0');
+    const year = threeDaysAgo.getFullYear();
+    const month = String(threeDaysAgo.getMonth() + 1).padStart(2, '0');
+    const date = String(threeDaysAgo.getDate()).padStart(2, '0');
 
     return `${year}-${month}-${date}`;
 }
