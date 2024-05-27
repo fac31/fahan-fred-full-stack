@@ -19,26 +19,28 @@ h1 {
     font-weight: 300;
 }
 
-.header__div > h1 {
+.header__div>h1 {
     text-align: center;
     margin: 40px 0;
 }
 
-h2, p, a {
+h2,
+p,
+a {
     font-family: "Kanit", sans-serif;
 }
 
-.card > h2 {
+.card>h2 {
     font-weight: 500;
     font-size: 1.5rem;
 }
 
-.card > p {
+.card>p {
     font-weight: 300;
     font-size: 1.1rem;
 }
 
-.card > a {
+.card>a {
     margin-top: auto;
     font-weight: 400;
 }
@@ -62,22 +64,23 @@ h2, p, a {
     gap: 10px;
     padding: 30px 10px;
     border-radius: 10px;
-    -webkit-box-shadow: 4px 8px 15px 0px rgba(0,0,0,0.08);
-    -moz-box-shadow: 4px 8px 15px 0px rgba(0,0,0,0.08);
-    box-shadow: 4px 8px 15px 0px rgba(0,0,0,0.08);
+    -webkit-box-shadow: 4px 8px 15px 0px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: 4px 8px 15px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 4px 8px 15px 0px rgba(0, 0, 0, 0.08);
 }
 
-.card > img {
+.card>img {
     width: 90%;
     height: 40%;
     object-fit: cover;
     border-radius: 10px;
-    -webkit-box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.15);
-    -moz-box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.15);
-    box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 8px 8px 15px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 8px 8px 15px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 8px 8px 15px 0px rgba(0, 0, 0, 0.15);
 }
 
-.card > p, h2 {
+.card>p,
+h2 {
     width: 90%;
 }
 
@@ -107,8 +110,23 @@ h2, p, a {
     align-items: center;
 }
 
-.footer__div > p {
+.footer__div>p {
     font-weight: 300;
     font-size: 0.8rem;
     color: #C3C3C3;
+}
+
+/* Add spacing between chat-container and cards-container */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    min-height: 100vh;
+}
+
+#chat-container,
+.cards-container {
+    width: 80%;
 }

@@ -6,6 +6,7 @@ import path from 'path';
 import { dirname } from 'path';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { defaultMiddleware } from '@nlbridge/express';
 
 dotenv.config();
 
@@ -22,8 +23,8 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes
 app.get('/data', async (req, res) => {
     try {
-    const dateThreeDaysAgo = getDateThreeDaysAgo();
-    const response = await fetch(`https://newsapi.org/v2/everything?q=finance&excludeDomains=yahoo.com&language=en&from=${dateThreeDaysAgo}&pageSize=10&sortBy=relevancy&apiKey=${process.env.NEWS_API_KEY}`);
+        const dateThreeDaysAgo = getDateThreeDaysAgo();
+        const response = await fetch(`https://newsapi.org/v2/everything?q=finance&excludeDomains=yahoo.com&language=en&from=${dateThreeDaysAgo}&pageSize=10&sortBy=relevancy&apiKey=${process.env.NEWS_API_KEY}`);
         const data = await response.json();
         console.log(data);
         res.json(data);
@@ -33,6 +34,15 @@ app.get('/data', async (req, res) => {
     }
 });
 
+// Chat API endpoint using default middleware
+app.post('/chat-api',
+    defaultMiddleware('openai', {
+        apiKey: process.env.OPENAI_API_KEY,
+        chatModel: 'gpt-3.5-turbo',
+    })
+);
+
+// Start the server
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
