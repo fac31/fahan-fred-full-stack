@@ -9,7 +9,18 @@ const nlbridgeAdapter = createChatAdapter()
     .withUrl('http://localhost:3000/chat-api');
 
 // Create the chat component and mount it to the chat container
-const aiChat = createAiChat().withAdapter(nlbridgeAdapter);
+const aiChat = createAiChat()
+    .withAdapter(nlbridgeAdapter)
+    .withLayoutOptions({
+        width: 920,
+        height: 400,
+        maxWidth: '80%',
+        maxHeight: '350px'
+    })
+    .withPromptBoxOptions({
+        autoFocus: false,
+        placeholder: 'Financial Pulse is here to help...'
+    });
 
 document.addEventListener('DOMContentLoaded', () => {
     const chatContainer = document.getElementById('chat-container');
