@@ -1,3 +1,9 @@
+// Import the CSS from the @nlux/themes package
+import '@nlux/themes/nova.css';
+
+import { createAiChat } from '@nlux/core';
+import { createChatAdapter } from '@nlux/nlbridge';
+
 const cardsContainer = document.querySelector(".cards-container");
 
 fetch("/data")
@@ -37,11 +43,9 @@ function createNewsCard(news) {
     card.append(image, title, description, sourceUrl);
     cardsContainer.appendChild(card);
     return card;
-}// Import the CSS from the @nlux/themes package
-import '@nlux/themes/nova.css';
+}
 
-import { createAiChat } from '@nlux/core';
-import { createChatAdapter } from '@nlux/nlbridge';
+
 
 // Create and configure the chat adapter
 const nlbridgeAdapter = createChatAdapter()
