@@ -24,6 +24,22 @@ export default {
             },
         ],
     },
+    devServer: {
+        static: {
+            directory: path.resolve('public'),
+        },
+        hot: true,
+        open: true,
+        port: 8080,
+        proxy: [
+            {
+                context: ['/api', '/chat-api'],
+                target: 'http://localhost:3000',
+                secure: false
+            }
+        ],
+    },
 };
+
 
 
