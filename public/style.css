@@ -49,6 +49,14 @@ a {
 
 /* card styling */
 
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
 .card>h2 {
     font-weight: 500;
     font-size: 1.5rem;
