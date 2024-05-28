@@ -1,6 +1,7 @@
 import path from 'path';
 
 export default {
+    mode: 'production',
     entry: './public/script.js',
     output: {
         filename: 'bundle.js',
@@ -34,12 +35,10 @@ export default {
         proxy: [
             {
                 context: ['/api', '/chat-api'],
-                target: 'http://localhost:3000',
+                target: 'http://localhost:3300',
                 secure: false
             }
         ],
     },
 };
-
-
 
