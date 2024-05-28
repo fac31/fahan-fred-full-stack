@@ -45,8 +45,6 @@ function createNewsCard(news) {
     return card;
 }
 
-
-
 // Create and configure the chat adapter
 const nlbridgeAdapter = createChatAdapter()
     .withUrl('http://localhost:3000/chat-api');
@@ -63,6 +61,13 @@ const aiChat = createAiChat()
     .withPromptBoxOptions({
         autoFocus: false,
         placeholder: 'Finance Pulse is here to help...'
+    })
+    .withPersonaOptions({
+        bot: {
+            name: 'FinancePulse',
+            picture: '/images/FinancePulse_Logo.png',
+            tagline: 'Cutting Through Financial Jargon: Master the World of Finance with AI!'
+        }
     });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -73,4 +78,5 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Chat container element not found');
     }
 });
+
 
