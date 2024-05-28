@@ -45,6 +45,20 @@ function createNewsCard(news) {
     return card;
 }
 
+// Define bot and user personas
+const botPersona = {
+    name: 'FinancePulse',
+    tagline: 'Cutting Through Financial Jargon: Master the World of Finance with AI!',
+    profilePicture: '/images/FinancePulse_Logo.png'
+};
+
+const pictureElement = document.createElement('span');
+pictureElement.innerHTML = '👩‍🦰';
+
+const userPersona = {
+    name: 'Maya',
+    picture: pictureElement
+};
 
 
 // Create and configure the chat adapter
@@ -62,7 +76,11 @@ const aiChat = createAiChat()
     })
     .withPromptBoxOptions({
         autoFocus: false,
-        placeholder: 'Financial Pulse is here to help...'
+        placeholder: 'Finance Pulse is here to help...'
+    })
+    .withPersonaOptions({
+        bot: botPersona,
+        user: userPersona
     });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -73,4 +91,5 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Chat container element not found');
     }
 });
+
 
