@@ -62,7 +62,7 @@ const aiChat = createAiChat()
     })
     .withPromptBoxOptions({
         autoFocus: false,
-        placeholder: 'Financial Pulse is here to help...'
+        placeholder: 'Finance Pulse is here to help...'
     });
 
 document.addEventListener('DOMContentLoaded', () => {
