@@ -11,7 +11,7 @@ import { defaultMiddleware } from '@nlbridge/express';
 dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = 3300;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
