@@ -47,7 +47,7 @@ function createNewsCard(news) {
 
 // Create and configure the chat adapter
 const nlbridgeAdapter = createChatAdapter()
-    .withUrl('http://localhost:3000/chat-api');
+    .withUrl('http://localhost:3300/chat-api');
 
 // Create the chat component and mount it to the chat container
 const aiChat = createAiChat()

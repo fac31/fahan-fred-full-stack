@@ -1,6 +1,7 @@
 import path from 'path';
 
 export default {
+    mode: 'production',
     entry: './public/script.js',
     output: {
         filename: 'bundle.js',
@@ -40,6 +41,4 @@ export default {
         ],
     },
 };
-
-
 
