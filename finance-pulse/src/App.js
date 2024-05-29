@@ -1,12 +1,14 @@
 import React from 'react';
-import NewsContainer from './components/NewsContainer.jsx';
-import ChatContainer from './components/ChatContainer.jsx';
+import Header from './components/header.jsx';
+import Main from './components/main.jsx';
+import Footer from './components/footer.jsx';
 
 function App() {
     return (
         <div>
-            <ChatContainer />
-            <NewsContainer />
+            <Header />
+            <Main />
+            <Footer />
         </div>
     );
 }

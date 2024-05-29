@@ -5,7 +5,7 @@ function Header() {
     <header>
       <div className="header__div">
         <img
-          src="images/finance-pulse-logo.svg"
+          src="/images/finance-pulse-logo.svg"
           alt="The Finance Pulse logo"
         />
         <h1>Finance Pulse</h1>
