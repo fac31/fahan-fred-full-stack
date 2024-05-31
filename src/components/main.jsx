@@ -5,12 +5,8 @@ import NewsContainer from './NewsContainer';
 function Main() {
   return (
     <main>
-      <div id="chat-container">
         <ChatContainer />
-      </div>
-      <div className="cards-container">
         <NewsContainer />
-      </div>
     </main>
   );
 }

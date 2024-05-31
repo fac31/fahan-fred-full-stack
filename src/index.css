@@ -11,8 +11,8 @@ body {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start; 
+  align-items: flex-start; 
 }
 
 h1 {
@@ -59,12 +59,12 @@ a {
 
 .card>h2 {
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .card>p {
   font-weight: 300;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .card>a {
@@ -73,24 +73,18 @@ a {
 }
 
 .cards-container {
-  max-width: 80vh;
+  width: 90%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
-  gap: 40px;
-}
-
-@media (max-width: 600px) {
-  .cards-container {
-    grid-template-columns: 1fr;
-  }
+  row-gap: 40px;
 }
 
 .card {
-  min-width: 40vh;
-  max-width: 80vh;
-  max-height: 600px;
+  min-width: 50%;
+  max-width: 90%;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -101,6 +95,13 @@ a {
   -webkit-box-shadow: 4px 8px 15px 0px rgba(0, 0, 0, 0.08);
   -moz-box-shadow: 4px 8px 15px 0px rgba(0, 0, 0, 0.08);
   box-shadow: 4px 8px 15px 0px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 950px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    width: 70%;
+  }
 }
 
 .card>img {
