@@ -7,7 +7,7 @@ import { createChatAdapter } from '@nlux/nlbridge';
 function ChatContainer() {
     useEffect(() => {
         const nlbridgeAdapter = createChatAdapter()
-            .withUrl('http://localhost:3300/chat-api');
+            .withUrl('http://localhost:3000/chat-api');
 
         const aiChat = createAiChat()
             .withAdapter(nlbridgeAdapter)

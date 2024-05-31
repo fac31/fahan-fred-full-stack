@@ -2,7 +2,7 @@ import path from 'path';
 
 export default {
     mode: 'production',
-    entry: './public/script.js',
+    entry: './index.js',
     output: {
         filename: 'bundle.js',
         path: path.resolve('public'),
@@ -10,12 +10,12 @@ export default {
     module: {
         rules: [
             {
-                test: /\.m?js$/,
+                test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
+                        presets: ['@babel/preset-env', '@babel/preset-react']
                     }
                 }
             },
@@ -35,10 +35,12 @@ export default {
         proxy: [
             {
                 context: ['/api', '/chat-api'],
-                target: 'http://localhost:3300',
+                target: 'http://localhost:3000',
                 secure: false
             }
         ],
     },
+    resolve: {
+        extensions: ['.js', '.jsx'], 
+    },
 };
-

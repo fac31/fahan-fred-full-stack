@@ -73,7 +73,7 @@ a {
 }
 
 .cards-container {
-  width: 80%;
+  max-width: 80vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
@@ -81,9 +81,16 @@ a {
   gap: 40px;
 }
 
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 .card {
-  width: 500px;
-  height: 600px;
+  min-width: 40vh;
+  max-width: 80vh;
+  max-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
