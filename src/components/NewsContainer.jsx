@@ -23,7 +23,7 @@ function NewsContainer() {
 
     return (
         <div className="cards-container">
-            {newsData.map(news => <NewsCard key={news.url} news={news} />)}
+            {newsData.map((news, index) => <NewsCard key={news.url} news={news} number={index + 1} />)}
         </div>
     );
 }
