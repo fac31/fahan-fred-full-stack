@@ -29,7 +29,6 @@ a {
 
 /* header styling */
 
-
 .header__div>h1 {
   text-align: center;
   margin: 40px 0;
@@ -59,17 +58,27 @@ a {
 
 .card>h2 {
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .card>p {
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
 }
 
 .card>a {
+  color: #000;
+  font-weight: 300;
+  margin-left: auto;
   margin-top: auto;
-  font-weight: 400;
+  text-decoration: none;
+  display: flex;
+  gap: 8px;
+  margin-right: 18px;
+}
+
+.card > a > img {
+  margin-top: 4px;
 }
 
 .cards-container {
@@ -97,12 +106,6 @@ a {
   box-shadow: 4px 8px 15px 0px rgba(0, 0, 0, 0.08);
 }
 
-@media (max-width: 950px) {
-  .cards-container {
-    grid-template-columns: 1fr;
-    width: 70%;
-  }
-}
 
 .card>img {
   width: 90%;
@@ -174,4 +177,45 @@ main {
 #chat-container,
 .cards-container {
   width: 80%;
+}
+
+/* animations  */
+
+/* underline animation */
+
+.card>a {
+  position: relative;
+}
+
+.card>a:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform-origin: bottom right;
+  transition: transform 0.30s ease-out;
+}
+
+.card>a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* media queries */
+
+@media (max-width: 950px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    width: 70%;
+  }
+  .card>h2 {
+    font-size: 1.5rem;
+  }
+  .card>p {
+    font-size: 1.2rem;
+  }
 }
