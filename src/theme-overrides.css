@@ -1,0 +1,35 @@
+.custom-ai-chat-comp.nluxc-root.nluxc-theme-nova {
+
+    --nluxc-text-color: #1d1e1bff;
+
+    --nluxc-input-background-color: #ffffff;
+    --nluxc-input-border-color: #000000;
+    --nluxc-input-text-color: #000000;
+    --nluxc-input-placeholder-color: #000000;
+
+    --nluxc-message-sent-background-color: #000000;
+    --nluxc-message-sent-border-color: #000000;
+
+    --nluxc-input-active-border-color: #000000;
+    --nluxc-input-active-border-color: #000000;
+    --nluxc-input-active-text-color: #000000;
+    --nluxc-input-active-placeholder-color: #000000;
+
+    --nluxc-input-disabled-background-color: #ffffff;
+    --nluxc-input-disabled-border-color: #4d4d4d;
+    --nluxc-input-disabled-text-color: #000000;
+    --nluxc-input-disabled-placeholder-color: #4d4d4d;
+
+    --nluxc-button-background-color: #000000;
+    --nluxc-button-border-color: #000000;
+    --nluxc-button-text-color: #ffffff;
+
+    --nluxc-button-active-background-color: #000000;
+    --nluxc-button-active-border-color: #000000;
+    --nluxc-button-active-text-color: #ffffff;
+
+    --nluxc-button-disabled-background-color: #4d4d4d;
+    --nluxc-button-disabled-border-color: #4d4d4d;
+    --nluxc-button-disabled-text-color: #ffffff;
+
+}

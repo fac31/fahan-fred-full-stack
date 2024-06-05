@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import '@nlux/themes/nova.css';
+import '../theme-overrides.css';
 import { createAiChat } from '@nlux/core';
 import { createChatAdapter } from '@nlux/nlbridge';
 
@@ -10,6 +11,7 @@ function ChatContainer() {
             .withUrl('http://localhost:3000/chat-api');
 
         const aiChat = createAiChat()
+            .withClassName('custom-ai-chat-comp')
             .withAdapter(nlbridgeAdapter)
             .withLayoutOptions({
                 width: 920,
