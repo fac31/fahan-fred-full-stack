@@ -77,17 +77,21 @@ a {
   margin-right: 18px;
 }
 
-.card > a > img {
+.card>a>img {
   margin-top: 4px;
 }
 
 .cards-container {
-  width: 90%;
+  margin-top: 460px;
+  width: 85%;
+  /* Adjusted */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
   row-gap: 40px;
+  margin-left: 50px;
+  /* Shifted to the left */
 }
 
 .card {
@@ -212,10 +216,23 @@ main {
     grid-template-columns: 1fr;
     width: 70%;
   }
+
   .card>h2 {
     font-size: 1.5rem;
   }
+
   .card>p {
     font-size: 1.2rem;
   }
+}
+
+/* Fixed position for chat-container */
+#chat-container {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 500px;
+  height: 400px;
+  background-color: white;
+  z-index: 1000;
 }
